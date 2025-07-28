@@ -24,3 +24,31 @@ BepInEx plugin for Descenders Next which allows you to play custom maps.
         - `FinishPoint` will need a `Box Collider` component with "Is Trigger" enabled.
     3. Terrain with a `Terrain Collider` and whatever else you want in your map.
         - The MicroSplat terrain addon is supported since the game has the necessary scripts for it.
+3. Creating the AssetBundle:
+    1. Create a folder called `Editor` in your project's `Assets` folder.
+    2. Create a new script called `CreateAssetBundles.cs` with the following script:
+    ```csharp
+    using UnityEditor;
+    using System.IO;
+
+    public class CreateAssetBundles
+    {
+        [MenuItem("Assets/Build AssetBundles")]
+        static void BuildAllAssetBundles()
+        {
+            string assetBundleDirectory = "Assets/AssetBundles";
+            if(!Directory.Exists(assetBundleDirectory))
+                Directory.CreateDirectory(assetBundleDirectory);
+
+            BuildPipeline.BuildAssetBundles(assetBundleDirectory,
+                                            BuildAssetBundleOptions.None,
+                                            BuildTarget.StandaloneWindows);
+        }
+    }
+    ```
+    3. Click on your scene in the project window.
+    4. In the inspector window you should find a `AssetBundle` field
+    5. Click on the dropdown box and choose `New...` and give your AssetBundle a name (this will be the name of your map)
+        - The mod loader only supports loading a single scene from an AssetBundle so adding in any extras won't work.
+    6. Export the AssetBundle under `Assets` -> `Build AssetBundles` in the menu bar
+    7. Copy the exported AssetBundle from the `AssetBundles` folder in your project to ``\Descenders Next\Descenders Next_Data\CustomMaps\`
