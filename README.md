@@ -8,6 +8,7 @@ BepInEx plugin for Descenders Next which allows you to play custom maps.
     - Respawn on track works fine.
 3. Timer does not reset back to 0 seconds when you respawn on track.
 4. Custom objectives are not supported, the previous map's objectives will stay on screen for now.
+5. Creating replays does not work at the moment.
 
 ## How to use
 1. Download BepInEx v5 from [https://github.com/BepInEx/BepInEx/releases](https://github.com/BepInEx/BepInEx/releases)
@@ -15,6 +16,8 @@ BepInEx plugin for Descenders Next which allows you to play custom maps.
 2. Extract and copy the files into the game's root directory.
 3. Copy `dnext_maploader.dll` into `\Descenders Next\BepInEx\plugins\`
 4. Copy custom maps into `\Descenders Next\Descenders Next_Data\CustomMaps\`
+5. Wait for a map to load fully in-game.
+6. Press F4 and click on one of the buttons to launch into a custom map.
 
 ## Making a map
 1. You will need Unity 2022.3.50f1 which you can get from [https://unity.com/releases/editor/whats-new/2022.3.50#installs](https://unity.com/releases/editor/whats-new/2022.3.50#installs)
