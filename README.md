@@ -9,6 +9,8 @@ BepInEx plugin for Descenders Next which allows you to play custom maps.
 3. Timer does not reset back to 0 seconds when you respawn on track.
 4. Custom objectives are not supported, the previous map's objectives will stay on screen for now.
 5. Creating replays does not work at the moment.
+6. Trying to load the original map in the ride menu will bring up an error.
+    - You will need to restart the game.
 
 ## How to use
 1. Download BepInEx v5 from [https://github.com/BepInEx/BepInEx/releases](https://github.com/BepInEx/BepInEx/releases)
