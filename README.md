@@ -16,6 +16,7 @@ BepInEx plugin for Descenders Next which allows you to play custom maps.
 1. Download BepInEx v5 from [https://github.com/BepInEx/BepInEx/releases](https://github.com/BepInEx/BepInEx/releases)
     -  BepInEx_win_x64_5.4.23.3.zip (latest version as of writing)
 2. In `\Descenders Next\BepInEx\config\BepInEx.cfg` change `HideManagerGameObject = false` to `HideManagerGameObject = true` otherwise the map loader won't work.
+    - You will need to launch the game at least once for this file to be generated.
 3. Extract and copy the files into the game's root directory.
 4. Download the latest version of dnext_maploader from [here](https://github.com/Notexe/dnext_maploader/releases/latest/download/dnext_maploader.zip).
 5. Copy `dnext_maploader.dll` into `\Descenders Next\BepInEx\plugins\`
