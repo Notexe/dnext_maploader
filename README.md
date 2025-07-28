@@ -14,10 +14,11 @@ BepInEx plugin for Descenders Next which allows you to play custom maps.
 1. Download BepInEx v5 from [https://github.com/BepInEx/BepInEx/releases](https://github.com/BepInEx/BepInEx/releases)
     -  BepInEx_win_x64_5.4.23.3.zip (latest version as of writing)
 2. Extract and copy the files into the game's root directory.
-3. Copy `dnext_maploader.dll` into `\Descenders Next\BepInEx\plugins\`
-4. Copy custom maps into `\Descenders Next\Descenders Next_Data\CustomMaps\`
-5. Wait for a map to load fully in-game.
-6. Press F4 and click on one of the buttons to launch into a custom map.
+3. Download the latest version of dnext_maploader from [here](https://github.com/Notexe/dnext_maploader/releases/latest/download/dnext_maploader.zip).
+4. Copy `dnext_maploader.dll` into `\Descenders Next\BepInEx\plugins\`
+5. Copy custom maps into `\Descenders Next\Descenders Next_Data\CustomMaps\`
+6. Wait for a map to load fully in-game.
+7. Press F4 and click on one of the buttons to launch into a custom map.
 
 ## Making a map
 1. You will need Unity 2022.3.50f1 which you can get from [https://unity.com/releases/editor/whats-new/2022.3.50#installs](https://unity.com/releases/editor/whats-new/2022.3.50#installs)
@@ -29,7 +30,7 @@ BepInEx plugin for Descenders Next which allows you to play custom maps.
         - The MicroSplat terrain addon is supported since the game has the necessary scripts for it.
 3. Creating the AssetBundle:
     1. Create a folder called `Editor` in your project's `Assets` folder.
-    2. Create a new script called `CreateAssetBundles.cs` with the following script:
+    2. Create a new script called `CreateAssetBundles.cs` in that folder with the following script:
     ```csharp
     using UnityEditor;
     using System.IO;
