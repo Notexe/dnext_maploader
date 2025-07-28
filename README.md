@@ -16,14 +16,14 @@ BepInEx plugin for Descenders Next which allows you to play custom maps.
 1. Download BepInEx v5 from [https://github.com/BepInEx/BepInEx/releases](https://github.com/BepInEx/BepInEx/releases)
     -  BepInEx_win_x64_5.4.23.3.zip (latest version as of writing)
 2. In `\Descenders Next\BepInEx\config\BepInEx.cfg` change `HideManagerGameObject = false` to `HideManagerGameObject = true` otherwise the map loader won't work.
-2. Extract and copy the files into the game's root directory.
-3. Download the latest version of dnext_maploader from [here](https://github.com/Notexe/dnext_maploader/releases/latest/download/dnext_maploader.zip).
-4. Copy `dnext_maploader.dll` into `\Descenders Next\BepInEx\plugins\`
-5. Copy custom maps into `\Descenders Next\Descenders Next_Data\CustomMaps\`
-6. Change your game to **offline mode** in the settings.
+3. Extract and copy the files into the game's root directory.
+4. Download the latest version of dnext_maploader from [here](https://github.com/Notexe/dnext_maploader/releases/latest/download/dnext_maploader.zip).
+5. Copy `dnext_maploader.dll` into `\Descenders Next\BepInEx\plugins\`
+6. Copy custom maps into `\Descenders Next\Descenders Next_Data\CustomMaps\`
+7. Change your game to **offline mode** in the settings.
     - Multiplayer has not been tested at all.
-7. Wait for a map to load fully in-game.
-8. Press F4 and click on one of the buttons to launch into a custom map.
+8. Wait for a map to load fully in-game.
+9. Press F4 and click on one of the buttons to launch into a custom map.
 
 ## Making a map
 1. You will need Unity 2022.3.50f1 which you can get from [https://unity.com/releases/editor/whats-new/2022.3.50#installs](https://unity.com/releases/editor/whats-new/2022.3.50#installs)
