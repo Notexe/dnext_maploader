@@ -1,12 +1,7 @@
 ﻿using BepInEx;
 using BepInEx.Logging;
-using Enviro;
-using Fusion;
 using HarmonyLib;
-using JBooth.MicroSplat;
-using Ragesquid.Boardgame.Networking;
 using RageSquid.BoardGame;
-using System;
 using System.Collections;
 using System.IO;
 using UnityEngine;
@@ -25,7 +20,7 @@ public class Plugin : BaseUnityPlugin
     private AssetBundle bundle;
     private string[] bundles;
     private GameObject player;
-    
+
     private string sceneName;
     private LocalPlayerInfo playerInfo;
 
@@ -143,7 +138,7 @@ public class Plugin : BaseUnityPlugin
 
         playerInfo = PlayerManager.SP.GetLocalPlayer();
         playerInfo.SetSpawnpoint(position, rotation, false, true);
-        
+
         Services.SessionManager.currentLevel.SetStartFinish(lineStarts, lineFinishes);
         Services.SessionManager.timer.Reset();
 
@@ -184,6 +179,30 @@ public class Plugin : BaseUnityPlugin
                 grindComponent.grindType = GrindType.Box;
 
                 Logger.LogInfo($"Found GrindObject: {obj.name}");
+            }
+            if (obj.name.StartsWith("Checkpoints"))
+            {
+                foreach (Transform child in obj.transform)
+                {
+                    Checkpoint checkpoint = child.GetComponent<Checkpoint>();
+                    if (checkpoint == null)
+                    {
+                        checkpoint = child.gameObject.AddComponent<Checkpoint>();
+                        Logger.LogInfo($"Added Checkpoint to child: {child.name}");
+                    }
+                    
+                    string name = child.name;
+                    int index = name.LastIndexOf("_");
+                    if (index >= 0 && index < name.Length - 1)
+                    {
+                        string checkpointId = name.Substring(index + 1);
+                        if (int.TryParse(checkpointId, out int checkpointIdInt))
+                        {
+                            checkpoint.Id = checkpointIdInt;
+                            Logger.LogInfo($"Assigned id: ${checkpointIdInt} to ${child.name}");
+                        }
+                    }
+                }
             }
         }
 
