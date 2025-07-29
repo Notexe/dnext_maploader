@@ -147,6 +147,46 @@ public class Plugin : BaseUnityPlugin
         Services.SessionManager.currentLevel.SetStartFinish(lineStarts, lineFinishes);
         Services.SessionManager.timer.Reset();
 
+        GameObject[] allObjects = FindObjectsOfType<GameObject>();
+
+        foreach (GameObject obj in allObjects)
+        {
+            if (obj.name.StartsWith("GrindObject_Rail"))
+            {
+                GrindObject grindComponent = obj.GetComponent<GrindObject>();
+                if (grindComponent == null)
+                {
+                    grindComponent = obj.AddComponent<GrindObject>();
+                }
+
+                grindComponent.grindType = GrindType.Rail;
+
+                Logger.LogInfo($"Found GrindObject: {obj.name}");
+
+                foreach (Transform child in obj.transform)
+                {
+                    SplineExtraInfo splineInfo = child.GetComponent<SplineExtraInfo>();
+                    if (splineInfo == null)
+                    {
+                        child.gameObject.AddComponent<SplineExtraInfo>();
+                        Logger.LogInfo($"Added SplineExtraInfo to child: {child.name}");
+                    }
+                }
+            }
+            if (obj.name.StartsWith("GrindObject_Box"))
+            {
+                GrindObject grindComponent = obj.GetComponent<GrindObject>();
+                if (grindComponent == null)
+                {
+                    grindComponent = obj.AddComponent<GrindObject>();
+                }
+
+                grindComponent.grindType = GrindType.Box;
+
+                Logger.LogInfo($"Found GrindObject: {obj.name}");
+            }
+        }
+
         base.StartCoroutine(this.SetPlayerPosition());
     }
 
