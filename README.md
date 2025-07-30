@@ -9,6 +9,7 @@ BepInEx plugin for Descenders Next which allows you to play custom maps.
     - Unless you add EnviroManager to your scene if you own the [Enviro 3](https://assetstore.unity.com/packages/tools/particles-effects/enviro-3-sky-and-weather-236601) addon.
 4. Trying to load the original map in the main menu will bring up an error.
     - You will need to restart the game.
+5. You can not restart the map after finishing.
 
 ## How to use
 1. Download BepInEx v5 from [https://github.com/BepInEx/BepInEx/releases](https://github.com/BepInEx/BepInEx/releases)
