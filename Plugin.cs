@@ -137,6 +137,10 @@ public class Plugin : BaseUnityPlugin
         Logger.LogInfo(rotation);
 
         playerInfo = PlayerManager.SP.GetLocalPlayer();
+
+        // sets defaultSpawnInfo
+        playerInfo.SetSpawnpoint(position, rotation, false, false);
+        // sets overrideSpawnInfo
         playerInfo.SetSpawnpoint(position, rotation, false, true);
 
         Services.SessionManager.currentLevel.SetStartFinish(lineStarts, lineFinishes);
