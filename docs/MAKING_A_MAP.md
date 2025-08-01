@@ -4,11 +4,20 @@
 
 - **Unity Version:** Download and install [Download Unity 2022.3.50f1](https://unity.com/releases/editor/whats-new/2022.3.50#installs)
 
-## Scene setup
+## Required GameObjects
+
+> [!CAUTION]
+> Make sure to delete any camera objects in the scene
 
 ### 1. `StartPoint` (Empty GameObject)
-- **Must exist**
-- No tag needed (`untagged`)
+- Untagged
+
+### 2. `FinishPoint` (Empty GameObject)
+- `Box Collider` component
+- Enable **"Is Trigger"**
+- Untagged
+
+<img width="1513" height="644" alt="image" src="https://github.com/Notexe/dnext_maploader/raw/main/docs/screenshots/FinishPoint.png" />
 
 ### 2. Terrain and Collision
 - Add **any objects with collision**, such as:
@@ -17,7 +26,7 @@
   - Custom geometry with colliders
 - **Optional Terrain Tool:** [MicroSplat](https://assetstore.unity.com/packages/tools/terrain/microsplat-96478) (already supported by the game)
 
-## Optional Scene Features
+## Optional GameObjects
 
 ### FinishPoint
 
