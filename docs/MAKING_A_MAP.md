@@ -28,16 +28,6 @@
 
 ## Optional GameObjects
 
-### FinishPoint
-
-- Create an empty GameObject named `FinishPoint`
-- Add:
-  - `Box Collider` component
-  - Enable **"Is Trigger"**
-
-<img width="1513" height="644" alt="image" src="https://github.com/Notexe/dnext_maploader/raw/main/docs/screenshots/FinishPoint.png" />
-
-
 ### Checkpoints
 
 - Parent GameObject: `Checkpoints` (Empty, untagged, **exact name**)
